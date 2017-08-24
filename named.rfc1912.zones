@@ -1,0 +1,12 @@
+zone "mail.domain.com" IN {
+        type master;
+        file "fwd.zone";
+        allow-update { none; };
+};
+zone "1.168.192.in-addr.arpa" IN {
+        type master;
+        file "rev.zone";
+        allow-update {none; };
+};
+
+

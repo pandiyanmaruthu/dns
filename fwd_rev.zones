@@ -1,0 +1,33 @@
+cat /var/named/fwd.zone 
+
+$TTL 86400
+@       IN SOA    mail.domain.com. root.domain.com. (
+2011071001    ; serial
+3600    ; refresh
+1800    ; retry
+604800    ; expire
+86400    ; minimum
+)
+                   IN    NS     mail.domain.com.
+                   IN    A      192.168.1.206
+mail               IN    MX  10 mail.domain.com.
+mail.domain.com.      IN    A     192.168.1.206
+mail               IN    A      192.168.1.206
+
+
+
+cat /var/named/rev.zone
+
+
+$TTL 86400
+@       IN SOA    mail.domain.com. root.domain.com. (
+2011071001    ; serial
+3600    ; refresh
+1800    ; retry
+604800    ; expire
+86400    ; minimum
+)
+                   IN    NS     mail.domain.com.
+206		   IN	PTR	mail.domain.com.
+
+
